@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+ <h1>Recent Videos</h1>
+  {% if video_list %}
+  <div class="container">
+    {% for video in video_list.published %}
+      <div class="small_item">
+        <a href="https://www.youtube.com/watch?v={{ video.youtubeId }}"><img src={{video.thumbnail}}></img></a>
+        <br>
+        <span class="title">
+        {{video.title}}({{video.publisher}})
+        </span>
+        <span class = "detail">
+        {{video.likeCount}} Likes | {{video.commentCount}} Comments
+        </span>
+      </div>
+    {% endfor %}
+  </div>
+   <h1>Recommends</h1>
+
+  <div class="container">
+    {% for video in video_list.random %}
+      <div class="big_item">
+        <a href="https://www.youtube.com/watch?v={{ video.youtubeId }}"><img src={{video.thumbnail}}></img></a>
+        <br>
+        <span class="title">
+        {{video.title}}({{video.publisher}})
+        </span>
+        <span class = "detail">
+        {{video.likeCount}} Likes|{{video.commentCount}} Comments
+        </span>
+      </div>
+    {% endfor %}
+  </div>
+
+  {% else %}
+    <p>There are no videos in the library.</p>
+  {% endif %}
+{% endblock %}

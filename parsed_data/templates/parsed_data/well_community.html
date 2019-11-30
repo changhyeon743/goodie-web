@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Well Community
+{% endblock %}
+
+{% block sidebar %}
+  <ul class="sidebar-nav">
+  <li><a href="/">Home</a> </li>
+  <li><a href="/trending">Trending</a></li>
+  <li><a href="/most_liked">Most Liked</a></li>
+  <li class = "sidebar-brand"><a href="/well_community">Well Community</a></li>
+
+  </ul>
+{% endblock%}
+
+{% block content %}
+ <h1>Well Community</h1>
+  {% if video_list %}
+  <div class="container" id ="big_container">
+    {% for video in video_list.well_community %}
+      <div class="big_item">
+        <a href="https://www.youtube.com/watch?v={{ video.youtubeId }}"><img src={{video.thumbnail}}></img></a>
+        <br>
+        <span class="title">
+        {{video.title}}({{video.publisher}})
+        </span>
+        <span class = "detail">
+        {{video.likeCount}} Likes | {{video.commentCount}} Comments
+        </span>
+      </div>
+    {% endfor %}
+  </div>
+
+  {% else %}
+    <p>There are no videos in the library.</p>
+  {% endif %}
+{% endblock %}

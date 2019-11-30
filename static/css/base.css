@@ -1,0 +1,94 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+body {
+  font-family: "Noto Sans KR", sans-serif !important;
+}
+
+h1 {
+  margin: 4px;
+  font-size: 24.5px;
+  color: #2d2d2d;
+}
+.topbar {
+  
+  overflow: hidden;
+  padding: 16px;
+  background-color: #fff;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  left: 0;
+  height: 80px;
+  width: 100%; /* Full width */
+}
+.topbar > a > i {
+  font-size: 33.5px;
+  color: #2d2d2d;
+}
+.topbar > span{
+  font-size: 33.5px;
+  font-weight: 500;
+  line-height: 1.24;
+  color: #d63838;
+}
+#big_container {
+  width:5000px;
+  height:600px;
+  display:flex;
+  flex-wrap: wrap;
+}
+.container {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.container > div.small_item {
+  margin: 16px;
+  width: 256px;
+  max-width: 256px;
+  display: inline-block;
+}
+
+.container > div.big_item {
+  margin: 16px;
+  width: 410px;
+  max-width: 410px;
+  display: inline-block;
+}
+
+.container > div.small_item > a > img {
+  width: 256px;
+  height: 144px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+.container > div.big_item > a > img {
+  width: 410px;
+  height: 227px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+
+.container > div > span {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.container > div > span.title {
+  margin: 4px;
+  font-size: 16.5px;
+  font-weight: 500;
+  line-height: 1.24;
+  color: #2d2d2d;
+}
+
+.container > div > span.detail {
+  margin: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.21;
+  color: #bdbdbd;
+}
